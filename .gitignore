@@ -33,10 +33,11 @@ test-results/
 
 # Data
 *.csv
-*.json
-data/
 output/
 cache/
+
+# Allow speakers.json
+!data/speakers.json
 
 # Logs
 *.log
