@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Data
+*.csv
+*.json
+data/
+output/
+cache/
+
+# Logs
+*.log
+logs/
+
+archive_deprecated 
+
+GUIDE.txt 
+AGENTS.md 
+GUIDE.md 
+Z.txt 
