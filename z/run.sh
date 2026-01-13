@@ -1,41 +1,33 @@
 #!/bin/bash
+# Setup script - creates venv and installs dependencies
 
-set -e
-
-echo "Setting up the webscraper..."
-
+echo "Setting up LLM Web Scraper..."
 cd "$(dirname "$0")/.."
 
+# Create venv if it doesn't exist
 if [ ! -d "venv" ]; then
     echo "Creating virtual environment..."
     python3 -m venv venv
 fi
 
+# Activate and install
 echo "Activating virtual environment..."
 source venv/bin/activate
 
-echo "Installing dependencies..."
-pip install -q --upgrade pip
-pip install -q -r requirements.txt
+echo "Upgrading pip..."
+pip install --upgrade pip
+
+echo "Installing Python dependencies..."
+pip install -r requirements.txt
 
 echo "Installing Playwright browsers..."
 playwright install chromium
 
 echo ""
-echo "Checking API keys..."
-python tests/test_api_keys.py
-
-echo ""
-echo "=" * 60
 echo "Setup complete!"
-echo "=" * 60
 echo ""
-echo "Quick start:"
+echo "To activate the environment:"
 echo "  source venv/bin/activate"
-echo "  python demo.py https://example.com"
 echo ""
-echo "Available examples:"
-echo "  - python examples/basic_scrape.py"
-echo "  - python examples/llm_extraction.py"
-echo "  - python examples/full_pipeline.py"
-echo ""
+echo "To start the application:"
+echo "  ./z/start.sh"
